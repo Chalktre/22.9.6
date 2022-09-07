@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,li {
+            list-style: none;
+        }
+        .nav {
+            margin: 0 auto;
+            width: 208px;
+            height: 250px;
+            background-color: pink;
+        }
+        .nav ul {
+            display: none;
+            margin-left: -1px;
+        }
+        .nav li {
+            float: left;
+            height: 30px;
+            width: 50px;
+            background-color: red;
+            border: 1px solid blue;
+            cursor: pointer;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .nav li a {
+            text-decoration: none;
+            color: white;
+        }
+        .nav li ul li {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">1</a>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">2</a>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">3</a>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+
+        </li>
+        <li>
+            <a href="#">4</a>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+
+        </li>
+    </ul>
+
+    <script>
+        var nav = document.querySelector('.nav')
+        var lis = nav.children;
+        console.log(lis);
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function() {
+                this.children[1].style.display = 'block';
+            }
+            lis[i].onmouseout = function() {
+                this.children[1].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
